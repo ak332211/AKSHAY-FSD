@@ -11,7 +11,7 @@ function router(nav) {
         .post(function (req, res) {
 
             var student = new studentModel(req.body);       //created an object for the class studentModel(the model class)
-            student.save();                                 //using that object save to model db
+            // student.save();                                 //using that object save to model db
             
             student.save( (error, data)=>{                   
 
