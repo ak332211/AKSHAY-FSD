@@ -60,7 +60,10 @@ app.use('/viewall', viewallRouter);
 app.use('/updel', updelRouter);
 app.use('/search', searchRouter);
 
-mongoose.connect("mongodb://localhost:27017/MyCollegeDb")       //for connecting to db using mongoose object.....
+
+
+// mongoose.connect("mongodb+srv://akDb:hello12345@cluster0-cnapv.mongodb.net/test?retryWrites=true&w=majority")
+ mongoose.connect("mongodb://localhost:27017/MyCollegeDb")       //for connecting to db using mongoose object.....
                                                                 // 27017 mongodb port number
                                                                 //MyCollegeDb Database name
 
@@ -86,7 +89,7 @@ app.get('/', function (req, res) {
 
 
 
-app.listen(4000, function () {
+app.listen(process.env.PORT || 4000, function () {
 
     console.log("Listening to port " + chalk.yellow('4000'));
 

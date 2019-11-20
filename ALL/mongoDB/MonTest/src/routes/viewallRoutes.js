@@ -6,14 +6,29 @@ var {studentModel} = require('../models/studentModel')
 
 
 function router(nav) {
-    viewallRouter.route('/')
-        .get(function (req, res) {
-            res.render('viewall',
-                {
-                    nav,
-                    title: "View All",
+    // viewallRouter.route('/')
+    //     .get(function (req, res) {
+    //         res.render('viewall',
+    //             {
+    //                 nav,
+    //                 title: "View All",
 
-                });
+    //             });
+    //     })
+
+    viewallRouter.route('/')
+        .get((req, res)=>{
+            studentModel.find( (error, data)=>{
+    
+            if(error)
+            {
+                throw error;
+            }
+            else{
+                res.send(data);
+            }
+    
+            })
         })
 
 
