@@ -1,6 +1,9 @@
 var express = require('express');
 var authorRouter = express.Router();
 
+
+var {authorModel} = require('../models/authorModel');
+
 var authors = [
     {
         name: "Adolf Hitler",
@@ -48,8 +51,44 @@ function router(nav) {
                 });
         })
 
+    authorRouter.route('/add')
+        .get(function (req, res) {
+                res.render('addauthor',
+                {
+                    nav,
+                    title: "Add Author"
 
-    authorRouter.route('/:id')
+                });
+
+        })
+
+
+    
+    
+        authorRouter.route('/save')
+        .post(function (req, res) {
+
+      
+            var authorss = new authorModel(req.body);
+     
+            authorss.save( (error, data)=>{
+
+                if(error)
+                {
+
+                    res.json({"status":"eror"});
+                    // throw error;
+
+                }
+
+                else{
+                    res.json({"status":"success"});
+                }
+            })
+
+        })
+    
+        authorRouter.route('/:id')
         .get(function (req, res) {
             const id = req.params.id;
 
@@ -62,6 +101,8 @@ function router(nav) {
                 });
 
         })
+
+
 
 
     return authorRouter;

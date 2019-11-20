@@ -47,6 +47,11 @@ var nav = [
     {
         link: "/books/add",
         title: "ADD BOOK"
+    },
+
+    {
+        link: "/authors/add",
+        title: "ADD AUTHOR"
     }
 ];
 
@@ -85,7 +90,10 @@ app.use('/contactus', contactusRouter);
 
 
 
-mongoose.connect("mongodb://localhost:27017/MyBookDb")
+mongoose.connect("mongodb+srv://akDb:hello12345@cluster0-cnapv.mongodb.net/test?retryWrites=true&w=majority")
+
+// mongoose.connect("mongodb://localhost:27017/MyLibraryDb")        //local database way
+
 
 
 app.set('views', './src/views');            //we are setting the 'views' from the specified path on the right
@@ -106,7 +114,7 @@ app.get('/', function (req, res) {            //either app.all() or app.get()
 });
 
 
-app.listen(4500, function () {
+app.listen(process.env.PORT || 4500, function () {              //process.env.port for heroku hosting(for dynamic acquiring of port in web host)
     // console.log("listening to port 8000")
     console.log("Listening to port " + chalk.yellow('4500'));
 
