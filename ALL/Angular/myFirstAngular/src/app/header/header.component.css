@@ -1,0 +1,18 @@
+.main{
+    width:100%;
+    height:105px;
+    background-color: rgb(216, 205, 57)
+}
+
+li{
+    float: left;
+    padding-right:20px; 
+    padding-top:40px;
+    list-style-type: none;
+}
+
+ul{
+    margin:0px;
+    padding-left: 20px;
+}
+
