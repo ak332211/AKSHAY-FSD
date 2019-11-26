@@ -1,46 +1,52 @@
-<div style="text-align:center">
-    <h1>
-      Welcome to {{ title }}! 
-      {{temp}}
-    </h1>
-   
-  </div>
-  
-  
-  <div >Months:
-    <select>
-      <option *ngFor="let i of months">{{i}}</option>
-    </select>
-  </div>
-  
-  
-  <div>Months:
-    <ul>
-      <li *ngFor="let i of months">{{i}}</li>
-    </ul>
-  </div>
-  
-  <p *ngIf="isavailable">TEST</p>
-  
-  <p *ngIf="a<b">A is greater</p>
-  
-  
-  <span *ngIf="isavailable; else condition1">Condition is Valid</span>
-  <ng-template #condition1>Condition is invalid</ng-template>
-  
-  
-  <br><br>
-  
-  <span *ngIf="a>b; else condition2">{{a}} is greater</span>
-  <ng-template #condition2>{{b}} is greater</ng-template>
-  
-  <br><br>
-  
-  <div>
-    <input type="text" [(ngModel)]="name">
-    <p>{{name}}</p>
-  </div>
-  
-  <br><br>
-  
-  <button (click)="myClickFunction($event)">Click Me</button>
+<div class="maindiv">
+
+
+    <div style="text-align:center">
+        <h1>
+          Welcome to {{ title }}! 
+          {{temp}}
+        </h1>
+      
+      </div>
+      
+      
+      <div >Months:
+        <select>
+          <option *ngFor="let i of months">{{i}}</option>
+        </select>
+      </div>
+      
+      
+      <div>Months:
+        <ul>
+          <li *ngFor="let i of months">{{i}}</li>
+        </ul>
+      </div>
+      
+      <p *ngIf="isavailable">TEST</p>
+      
+      <p *ngIf="a<b">A is greater</p>
+      
+      
+      <span *ngIf="isavailable; else condition1">Condition is Valid</span>
+      <ng-template #condition1>Condition is invalid</ng-template>
+      
+      
+      <br><br>
+      
+      <span *ngIf="a>b; else condition2">{{a}} is greater</span>
+      <ng-template #condition2>{{b}} is greater</ng-template>
+      
+      <br><br>
+      
+      <div>
+        <input type="text" [(ngModel)]="name">
+        <p>{{name}}</p>
+      </div>
+      
+      <br>
+      
+      <button (click)="myClickFunction($event)">Click Me</button>
+
+
+</div>
