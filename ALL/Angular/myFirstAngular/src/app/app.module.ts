@@ -42,3 +42,8 @@ import { StudentComponent } from './student/student.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
