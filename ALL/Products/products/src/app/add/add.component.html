@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="jumbotron">
+
+        <form (ngSubmit)="addProduct()">
+
+
+            <div class="form-group">
+                <label>Product ID</label>
+                <input type="number" name="p_id" [(ngModel)]="productItem.productId">
+            </div>
+
+            <div class="form-group">
+                <label>Product Name</label>
+                <input type="string" name="p_name" [(ngModel)]="productItem.productName">
+            </div>
+
+            <div class="form-group">
+                <label>Product Code</label>
+                <input type="string" name="p_code" [(ngModel)]="productItem.productCode">
+            </div>
+
+            <div class="form-group">
+                <label>Release Date</label>
+                <input type="string" name="p_date" [(ngModel)]="productItem.releaseDate">
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <input type="string" name="p_desc" [(ngModel)]="productItem.description">
+            </div>
+
+            <div class="form-group">
+                <label>Price</label>
+                <input type="number" name="p_price" [(ngModel)]="productItem.price">
+            </div>
+
+            <div class="form-group">
+                <label>StarRating</label>
+                <input type="number" name="p_rating" [(ngModel)]="productItem.starRating">
+            </div>
+
+            <div class="form-group">
+                <label>ImageUrl</label>
+                <input type="string" name="p_image" [(ngModel)]="productItem.imageUrl">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
+            </div>
+
+
+        </form>
+
+    </div>
+</div>
